@@ -1,40 +1,19 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
-
 //components
-import Configurator from './components/Configurator.jsx';
-import Testimonial from './components/Testimonial.jsx';
-import Home from './components/Home.jsx';
-
-
-
-
+import Buttons from './components/buttons';
+import buttons from '../dist/buttons.css';
 
 class App extends React.Component {
- constructor() {
-   super()
-   this.state = {
-     data: []
-   }
- }
-  componentDidMount() {
-    fetch("https://raw.githubusercontent.com/Bernabe-Felix/Bellotero/master/app.json")
-    .then(rsp => rsp.json())
-    .then(rsp => { this.setState({data: rsp})});
-  }
 
   render() {
     return (
-    	<BrowserRouter>
 		  <div>
-		    <Switch>
-		      <Route exact path="/" component={Home}/>
-          <Route path="/Testimonial" component={Testimonial}/>
-          <Route path="/Configurator" component={Configurator}/>
-		    </Switch>
-    	  </div>
-    	</BrowserRouter>
+        <div><h1>CSS GRADIENT</h1></div>
+         <h4>Gradient Generator for Linear and Radial CSS Color Gradients</h4>
+          <Buttons />
+           <div><canvas id="canvas" width="300" height="300"></canvas></div>
+      </div>
     );
   }
 }
