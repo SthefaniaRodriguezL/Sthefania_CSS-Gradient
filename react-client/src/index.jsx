@@ -12,7 +12,6 @@ class App extends React.Component {
         <div><h1>CSS GRADIENT</h1></div>
          <h4>Gradient Generator for Linear and Radial CSS Color Gradients</h4>
           <Buttons />
-           <div><canvas id="canvas" width="300" height="300"></canvas></div>
       </div>
     );
   }

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import Gradient from './gradient';
 
 class Buttons extends React.Component {
-
   render() {
     return (
 		  <div>
        <div>
          <div><h5>STYLE:</h5></div>
-		     <button type="Linear">Linear</button>
          <button type="Radial">Radial</button>
        </div>
        <div>
@@ -32,6 +31,9 @@ class Buttons extends React.Component {
          <div><h5>COLOR FORMAT:</h5></div>
          <button type="Hex">Hex</button>
          <button type="Rgb">Rgb</button>
+       </div>
+       <div>
+         <Gradient />
        </div>
       </div>
     );
