@@ -9,19 +9,26 @@ class Gradient extends React.Component {
     this.getGenerator = this.getGenerator.bind(this);
 
   }
-  componentDidMount() {
+  componentWillMount() {
     this.getGenerator()
   }
-   async getGenerator() {
+   getGenerator() {
      const url = 'https://raw.githubusercontent.com/ghosh/uiGradients/master/gradients.json' ;
-     const rsp = await fetch(url);
-     console.log(rsp.json());
-     //const results = rsp.json()
-     //this.setState({colors: results.json()})
-    }
+     fetch(url).then(response =>
+    response.json().then(data => ({
+        data: data,
+        status: response.status
+    })
+).then(res => {
+    console.log(res.status, res.data)
+    this.setState({colors:res.data})
+}))
+;
+// create another function to go inside the big object and from there for it can allow you to go inside the array(use the .map method) and from there you can get access to small objects and start doing more processes.
+
+}
   render() {
-    //console.log(this.state.colors);
-      //<button onclick={this.state.colors.map(Linear)}><li>Linear</li></button>
+console.log("i am dataaaaaa" + this.state.colors);
     return (
       <div>
 
